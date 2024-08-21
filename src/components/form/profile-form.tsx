@@ -10,7 +10,12 @@ import { Input } from '../ui/input'
 import { Button } from '../ui/button'
 import { Loader2 } from 'lucide-react'
 
-const ProfileForm = () => {
+type Props = {
+  user?: any
+  onUpdate?: any
+}
+
+const ProfileForm = ({user,onUpdate}:Props) => {
     const [isLoading,setisLoading] = useState(false)
 
     const form = useForm<z.infer<typeof EditUserProfileSchema>>({
